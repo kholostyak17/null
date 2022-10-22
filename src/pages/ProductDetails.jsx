@@ -9,7 +9,6 @@ const API_URL = "https://front-test-api.herokuapp.com/api";
 const ProductDetails = () => {
   const { id } = useParams();
   const [productData, setProductData] = useState({});
-  const isProductData = Object.keys(productData).length !== 0;
 
   const getProductData = async () => {
     const response = await fetch(`${API_URL}/product/${id}`);
@@ -28,7 +27,7 @@ const ProductDetails = () => {
 
   return (
     <div className="container">
-      {isProductData ? (
+      {Boolean(productData?.id) ? (
         <>
           <div className="details-layout">
             <div className="details-picture">

@@ -6,12 +6,12 @@ const Actions = ({ storageOptions, colorOptions }) => {
       <div>
         <h3>Options</h3>
         <select name="storage">
-          {storageOptions.map((item) => (
+          {storageOptions?.map((item) => (
             <option value={item.code}>{item.name}</option>
           ))}
         </select>
         <select name="color">
-          {colorOptions.map((item) => (
+          {colorOptions?.map((item) => (
             <option value={item.code}>{item.name}</option>
           ))}
         </select>

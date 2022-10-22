@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import ProductList from "./pages/ProductList";
 import ProductDetails from "./pages/ProductDetails";
-import App from "./pages/App/App";
 import Header from "./components/Header";
 
 export const browserRouterRef = React.createRef();
@@ -14,9 +13,6 @@ function Router() {
       <BrowserRouter ref={browserRouterRef}>
         <Header />
         <Switch>
-          <Route exact path="/app">
-            <App />
-          </Route>
           <Route exact path="/">
             <ProductList />
           </Route>
