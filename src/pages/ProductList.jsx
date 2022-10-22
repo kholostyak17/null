@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Item from "../components/Item";
 import Search from "../components/Search";
 
 const API_URL = "https://front-test-api.herokuapp.com/api";
@@ -35,7 +35,7 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div className="list-page">
+    <div className="container">
       <h1>Smartphones</h1>
       <div>
         <div>
@@ -44,17 +44,8 @@ const ProductList = () => {
         </div>
         <div className="list-elements">
           {Boolean(list.length) &&
-            list.map((elem) => {
-              return (
-                <Link to={`/${elem.id}`} key={elem.id}>
-                  <div className="item">
-                    <img src={elem.imgUrl} alt="smartphone picture" />
-                    <h3>{elem.brand}</h3>
-                    <p>{elem.model}</p>
-                    <p>{elem.price}€</p>
-                  </div>
-                </Link>
-              );
+            list.map((item) => {
+              return <Item data={item} key={item.id} />;
             })}
         </div>
       </div>
