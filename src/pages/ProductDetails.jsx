@@ -28,20 +28,21 @@ const ProductDetails = () => {
 
   return (
     <div className="container">
-      {/* este es el item: {id} */}
       {isProductData ? (
-        <div className="details-layout">
-          <div className="details-picture">
-            <Image imageUrl={productData?.imgUrl} />
+        <>
+          <div className="details-layout">
+            <div className="details-picture">
+              <Image imageUrl={productData?.imgUrl} />
+            </div>
+            <div className="details-data">
+              <Description data={productData} />
+              <Actions
+                storageOptions={productData?.options?.storages}
+                colorOptions={productData?.options?.colors}
+              />
+            </div>
           </div>
-          <div className="details-data">
-            <Description data={productData} />
-            <Actions
-              storageOptions={productData?.options?.storages}
-              colorOptions={productData?.options?.colors}
-            />
-          </div>
-        </div>
+        </>
       ) : (
         <div>loading...</div>
       )}

@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Description = ({ data }) => {
-  const listData = Object.entries(data);
+  const [isTextHidden, setIsTextHidden] = useState(true);
+  const listData = Object.entries(data); //transform object to array
+
   console.log(listData);
   return (
-    <ul className="description">
-      {listData.map((item) => (
-        <li>
-          {item[0]}: {item[1].toString()}
-        </li>
-      ))}
-    </ul>
+    <div className="description">
+      <h1>
+        {data?.brand} {data?.model}
+      </h1>
+      <p>{data?.price}€</p>
+      <ul className={isTextHidden && "hidden-description"}>
+        {listData.map((item) => (
+          <li>
+            {item[0]}: {item[1].toString()}
+          </li>
+        ))}
+      </ul>
+      <button
+        onClick={() => {
+          setIsTextHidden(!isTextHidden);
+        }}
+      >
+        {isTextHidden ? "show more" : "see less"}
+      </button>
+    </div>
   );
 };
 
