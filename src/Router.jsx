@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-import Gallery from "./pages/Gallery/Gallery";
-import ItemDetails from "./pages/ItemDetails/ItemDetails";
+import Gallery from "./pages/Gallery";
+import ItemDetails from "./pages/ItemDetails";
 import App from "./pages/App/App";
 import Header from "./components/Header/Header";
 
