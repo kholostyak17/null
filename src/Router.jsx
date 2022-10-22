@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
-import Gallery from "./pages/Gallery";
-import ItemDetails from "./pages/ItemDetails";
+import ProductList from "./pages/ProductList";
+import ProductDetails from "./pages/ProductDetails";
 import App from "./pages/App/App";
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
 
 export const browserRouterRef = React.createRef();
 
@@ -18,10 +18,10 @@ function Router() {
             <App />
           </Route>
           <Route exact path="/">
-            <Gallery />
+            <ProductList />
           </Route>
           <Route exact path="/:id">
-            <ItemDetails />
+            <ProductDetails />
           </Route>
           <Route>
             <h1>Código 404: Ruta no encontrada :(</h1>

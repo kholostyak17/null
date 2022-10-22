@@ -1,6 +1,11 @@
-@use "./styles/Gallery.scss";
-@use "./styles/ItemDetails.scss";
+@use "./styles/ProductList.scss";
+@use "./styles/ProductDetails.scss";
+@use "./styles/Actions.scss";
+@use "./styles/Description.scss";
 @use "./styles/Header.scss";
+@use "./styles/Image.scss";
+@use "./styles/Item.scss";
+@use "./styles/Search.scss";
 
 body {
   margin: 0;
