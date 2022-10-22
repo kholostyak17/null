@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Gallery from "./pages/Gallery/Gallery";
 import ItemDetails from "./pages/ItemDetails/ItemDetails";
 import App from "./pages/App/App";
+import Header from "./components/Header/Header";
 
 export const browserRouterRef = React.createRef();
 
@@ -11,7 +12,7 @@ function Router() {
   return (
     <div className="div-app">
       <BrowserRouter ref={browserRouterRef}>
-        {/* <MyNavbar /> */}
+        <Header />
         <Switch>
           <Route exact path="/app">
             <App />
