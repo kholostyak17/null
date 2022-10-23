@@ -14,10 +14,10 @@ const ProductDetails = () => {
     const response = await fetch(`${API_URL}/product/${id}`);
     const productData = await response.json();
     try {
-      console.log(response, productData, "TRujyrfdY");
+      console.log(response, productData, "this is the original data");
       setProductData(productData);
     } catch {
-      console.log(response, productData, "CATCHH");
+      //set error here
     }
   };
 
