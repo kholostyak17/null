@@ -11,6 +11,7 @@ const Search = ({ searchText, setSearchText }) => {
 
   return (
     <input
+      placeholder="search here)"
       defaultValue={searchText}
       onChange={(event) => setNewTextFilter(event.target.value)}
       type="text"

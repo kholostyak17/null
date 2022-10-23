@@ -8,6 +8,15 @@ const Header = () => {
         <Link to="/">
           <img className="nav-logo" src="/logo.png" alt="" />
         </Link>
+        by{" "}
+        <a
+          className="no-style"
+          href="https://github.com/kholostyak17"
+          target="_blank"
+          style={{ cursor: "pointer" }}
+        >
+          @kholostyak17
+        </a>
       </div>
     </div>
   );
