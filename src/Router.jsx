@@ -20,7 +20,7 @@ function Router() {
             <ProductDetails />
           </Route>
           <Route>
-            <h1>Código 404: Ruta no encontrada :(</h1>
+            <h1>404- route not found</h1>
           </Route>
         </Switch>
       </BrowserRouter>

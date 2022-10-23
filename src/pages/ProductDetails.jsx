@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom";
 import Actions from "../components/Actions";
 import Description from "../components/Description";
 import Image from "../components/Image";
-
-const API_URL = "https://front-test-api.herokuapp.com/api";
+import { API_URL } from "../common/constants";
 
 const ProductDetails = () => {
   const { id } = useParams();

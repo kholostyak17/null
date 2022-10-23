@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const itemsCount = useSelector((state) => state.items.counter);
+
   return (
     <div className="header">
       <div className="container">
@@ -17,6 +20,8 @@ const Header = () => {
         >
           @kholostyak17
         </a>
+        {" - "}
+        {itemsCount} items
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const Description = ({ data }) => {
       <p>{data?.price}€</p>
       <ul className={isTextHidden && "hidden-description"}>
         {listData?.map((item) => (
-          <li>
+          <li key={item[0]}>
             {item[0]}: {item[1].toString()}
           </li>
         ))}
