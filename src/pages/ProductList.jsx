@@ -3,21 +3,15 @@ import Item from "../components/Item";
 import Search from "../components/Search";
 
 const API_URL = "https://front-test-api.herokuapp.com/api";
-
-const SortPicker = () => {
-  return (
-    <select name="select">
-      <option value="value1">Value 1</option>
-      <option value="value2" selected>
-        Value 2
-      </option>
-      <option value="value3">Value 3</option>
-    </select>
-  );
-};
+const SORT_CRITERIA = [
+  { label: "Name", value: "name" },
+  { label: "Price", value: "price" },
+  { label: "Brand", value: "brand" },
+];
 
 const ProductList = () => {
   const [list, setList] = useState([]);
+  const [sortOption, setSortOption] = useState(SORT_CRITERIA[0].value);
 
   const getList = async () => {
     const response = await fetch(`${API_URL}/product`);
@@ -34,12 +28,35 @@ const ProductList = () => {
     getList();
   }, []);
 
+  useEffect(() => {
+    console.log(list);
+    const sortedList = list.sort((item1, item2) => {
+      if (item1?.[sortOption] > item2?.[sortOption]) {
+        return 1;
+      }
+      if (item1?.[sortOption] < item2?.[sortOption]) {
+        return -1;
+      }
+      return 0;
+    });
+    setList(sortedList);
+  }, [sortOption]);
+
   return (
     <div className="container">
       <h1>Smartphones</h1>
       <div>
         <div>
-          <SortPicker />
+          <select
+            name="select"
+            onChange={(event) => {
+              setSortOption(event.target.value);
+            }}
+          >
+            {SORT_CRITERIA.map((item) => (
+              <option value={item.value}>{item.label}</option>
+            ))}
+          </select>
           <Search />
         </div>
         <div className="list-elements">
