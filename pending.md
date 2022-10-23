@@ -9,8 +9,9 @@
 
 ## LIST PAGE
 
-- **implement sorting option**
+- reset filter button
 - create toggle "list" layout
+- show number of items in the list with filters
 
 ## HEADER
 
@@ -19,9 +20,6 @@
 - show number of items
 
 ## SEARCH
-
-- filter products when user write at least 3 chars
-- filter in real time with no button
 
 ## ITEM
 
@@ -41,3 +39,5 @@
 - improve option selectors
 - create "buy" POST call after push buyButton
 - save in header the number of items in the cart (returned as response after add it to the list) [persistent-data]
+- semi persistent search filter
+- persistent sorting

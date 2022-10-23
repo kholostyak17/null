@@ -12,13 +12,24 @@ export const sortList = (list = [], criteria, order) => {
       item1 = a?.[criteria].toUpperCase();
       item2 = b?.[criteria].toUpperCase();
     }
-    if (isAscend ? item1 > item2 : item1 < item2) {
-      return 1;
+    if (item1 > item2) {
+      return isAscend ? 1 : -1;
     }
-    if (isAscend ? item1 < item2 : item1 > item2) {
-      return -1;
+    if (item1 < item2) {
+      return isAscend ? -1 : 1;
     }
     return 0;
   });
   return sortedList;
+};
+
+export const applySearchFilter = (list = [], filter) => {
+  const filteredList = list.filter((item) => {
+    const brandName = item?.brand.toUpperCase();
+    const modelName = item?.model.toUpperCase();
+    const brandNameIncludes = brandName.includes(filter.toUpperCase());
+    const modelNameIncludes = modelName.includes(filter.toUpperCase());
+    return brandNameIncludes || modelNameIncludes;
+  });
+  return filteredList;
 };
