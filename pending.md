@@ -25,6 +25,7 @@
 
 ## ITEM
 
+- set fixed height
 - improve layout
 
 ## IMAGE
