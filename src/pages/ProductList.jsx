@@ -1,17 +1,34 @@
 import React, { useEffect, useState } from "react";
-import Item, { VARIANTS } from "../components/Item";
+import Item from "../components/Item";
 import Search from "../components/Search";
 import { API_URL, SORT_CRITERIA, SORT_ORDER } from "../common/constants";
 import { applySearchFilter, sortList } from "../common/helper";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  changeCriteria,
+  changeOrder,
+  resetOptions,
+} from "../store/features/sortingSlice";
+
+export const sortCriteriaOptions = [
+  { label: "Price", value: SORT_CRITERIA.price },
+  { label: "Brand", value: SORT_CRITERIA.brand },
+  { label: "Name (model)", value: SORT_CRITERIA.name },
+];
+export const sortOrderOptions = [
+  { label: "Ascending", value: SORT_ORDER.ascending },
+  { label: "Descending", value: SORT_ORDER.descending },
+];
 
 const ProductList = () => {
   const [originalData, setOriginalData] = useState([]);
-  const [sortCriteria, setSortCriteria] = useState(SORT_CRITERIA[0].value); //TODO: catch from localstorage
-  const [sortOrder, setSortOrder] = useState(SORT_ORDER[0].value); //TODO: catch from localstorage
-  const [listSorted, setListSorted] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  const [sortedData, setSortedData] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [isGridEnabled, setIsGridEnabled] = useState(true);
+  const dispatch = useDispatch();
+  const sortingCriteria = useSelector((state) => state.sorting.criteria);
+  const sortingOrder = useSelector((state) => state.sorting.order);
 
   const getData = async () => {
     const response = await fetch(`${API_URL}/product`);
@@ -27,10 +44,10 @@ const ProductList = () => {
   const getContent = () => {
     const sortedList = sortList(
       Boolean(searchText) ? filteredData : originalData,
-      sortCriteria,
-      sortOrder
+      sortingCriteria,
+      sortingOrder
     );
-    setListSorted(sortedList);
+    setSortedData(sortedList);
   };
 
   useEffect(() => {
@@ -41,7 +58,7 @@ const ProductList = () => {
     if (originalData) {
       getContent();
     }
-  }, [originalData, filteredData, sortCriteria, sortOrder]);
+  }, [originalData, filteredData, sortingCriteria, sortingOrder]);
 
   useEffect(() => {
     if (searchText) {
@@ -57,47 +74,43 @@ const ProductList = () => {
       <h1>Smartphones</h1>
       <div>
         <div>
-          <button onClick={() => setIsGridEnabled(!isGridEnabled)}>
-            change list
-          </button>
-          {/* <button onClick={() => setIsGridEnabled(!isGridEnabled)}>
-            reset filter
-          </button> */}
           <select
-            name="select"
-            defaultValue={sortCriteria}
+            value={sortingCriteria}
             onChange={(event) => {
-              setSortCriteria(event.target.value);
+              dispatch(changeCriteria(event.target.value));
             }}
           >
-            {SORT_CRITERIA.map((item) => (
+            {sortCriteriaOptions.map((item) => (
               <option key={item.value} value={item.value}>
                 {item.label}
               </option>
             ))}
           </select>
           <select
-            name="select"
-            defaultValue={sortOrder}
+            value={sortingOrder}
             onChange={(event) => {
-              const isAscend =
-                event.target.value === SORT_ORDER[0].value.toString();
-              setSortOrder(isAscend);
+              dispatch(changeOrder(event.target.value));
             }}
           >
-            {SORT_ORDER.map((item) => (
+            {sortOrderOptions.map((item) => (
               <option key={item.value} value={item.value}>
                 {item.label}
               </option>
             ))}
           </select>
-          <Search
-            searchText={searchText}
-            setSearchText={(text) => setSearchText(text)}
-          />
+          <button onClick={() => dispatch(resetOptions())}>reset filter</button>
         </div>
+        <Search
+          searchText={searchText}
+          setSearchText={(text) => setSearchText(text)}
+        />
+      </div>
+      <div>
+        <button onClick={() => setIsGridEnabled(!isGridEnabled)}>
+          viewMode
+        </button>
         <div className={`list-items ${isGridEnabled ? "grid" : "list"}`}>
-          {listSorted.map((item) => (
+          {sortedData.map((item) => (
             <Item key={item.id} gridEnabled={isGridEnabled} data={item} />
           ))}
         </div>
