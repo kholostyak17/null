@@ -56,7 +56,7 @@ const ProductList = () => {
   }, [filteredData, sortingCriteria, sortingOrder]);
 
   return (
-    <div className="container">
+    <div className="container" data-testid="list-page">
       <h1>Smartphones</h1>
       <div>
         <div>

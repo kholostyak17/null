@@ -16,6 +16,7 @@ const Search = () => {
 
   return (
     <input
+      data-testid="search"
       placeholder="search here)"
       defaultValue={filter}
       onChange={(event) => setNewTextFilter(event.target.value)}

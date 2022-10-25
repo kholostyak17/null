@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-const Description = ({ data }) => {
+const Description = ({ data = {} }) => {
   const [isTextHidden, setIsTextHidden] = useState(true);
   const listData = Object.entries(data); //transform object to array
 
   return (
-    <div className="description">
+    <div className="description" data-testid="description">
       <h1>
         {data?.brand} {data?.model}
       </h1>

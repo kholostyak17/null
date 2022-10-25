@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Item = ({ data, gridEnabled = true }) => {
+const Item = ({ data = {}, gridEnabled = true }) => {
   const { id, imgUrl, brand, model, price } = data;
 
   return (
-    <Link to={`/${id}`}>
+    <Link to={`/${id}`} data-testid="item">
+      div
       {gridEnabled ? (
         <div className="item-grid">
           <img src={imgUrl} />

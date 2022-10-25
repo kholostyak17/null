@@ -26,13 +26,12 @@ export const getProductById = (id) =>
       console.error(error);
     });
 
-export const buyProduct = (id, data) =>
+export const buyProduct = (data) =>
   fetch(`${API_URL}/cart`, {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
       "Content-Type": "application/json",
-      // 'Content-Type': 'application/x-www-form-urlencoded',
     },
   })
     .then((response) => {

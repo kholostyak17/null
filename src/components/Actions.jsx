@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom";
 import { buyProduct } from "../common/services";
 import { incrementCart } from "../store/features/productsSlice";
 
-const Actions = ({ storageOptions, colorOptions, price }) => {
+const Actions = ({ storageOptions = [], colorOptions = [], price }) => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const [storageCode, setStorageCode] = useState(storageOptions?.[0].code);
-  const [colorCode, setColorCode] = useState(colorOptions?.[0].code);
+  const [storageCode, setStorageCode] = useState(storageOptions?.[0]?.code);
+  const [colorCode, setColorCode] = useState(colorOptions?.[0]?.code);
   const isOutOfStock = !colorOptions.length || !storageOptions.length || !price;
 
   const buy = async (data) => {
@@ -18,7 +18,7 @@ const Actions = ({ storageOptions, colorOptions, price }) => {
   };
 
   return (
-    <div className="actions">
+    <div className="actions" data-testid="actions">
       <div>
         <h3>Options</h3>
         {Boolean(storageOptions?.length) && (

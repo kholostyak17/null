@@ -30,7 +30,7 @@ const ProductDetails = () => {
   }, []);
 
   return (
-    <div className="container details-page">
+    <div className="container details-page" data-testid="details-page">
       {productData?.id ? (
         <>
           <div className="details-layout">
