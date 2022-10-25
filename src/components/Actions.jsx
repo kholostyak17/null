@@ -1,27 +1,20 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-// import { API_URL } from "../common/constants";
-import { addToCart } from "../store/features/productsSlice";
+import { buyProduct } from "../common/services";
+import { incrementCart } from "../store/features/productsSlice";
 
-const Actions = ({ storageOptions, colorOptions }) => {
+const Actions = ({ storageOptions, colorOptions, price }) => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const [storageCode, setStorageCode] = useState(storageOptions?.[0].code);
   const [colorCode, setColorCode] = useState(colorOptions?.[0].code);
+  const isOutOfStock = !colorOptions.length || !storageOptions.length || !price;
 
   const buy = async (data) => {
-    // const response = await fetch(`${API_URL}/cart`, {
-    //   method: "POST",
-    //   body: JSON.stringify(data),
-    // });
-    // const buyResponse = await response.json();
-    // try {
-    //   dispatch(increment(buyResponse.count));
-    // } catch {
-    //   //set error here
-    // }
-    dispatch(addToCart({ hola: "hola" }));
+    const response = await buyProduct(id, data);
+    dispatch(incrementCart(response.count));
+    // dispatch(addToCart(data));
   };
 
   return (
@@ -44,6 +37,7 @@ const Actions = ({ storageOptions, colorOptions }) => {
           <select
             name="color"
             onChange={(event) => setColorCode(event.target.value)}
+            disabled={!colorOptions.length}
           >
             {colorOptions?.map((item) => (
               <option key={item.code} value={item.code}>
@@ -56,9 +50,9 @@ const Actions = ({ storageOptions, colorOptions }) => {
       <div className="buy-section">
         <button
           onClick={() => buy({ id, colorCode, storageCode })}
-          disabled={!(colorCode && setStorageCode)}
+          disabled={isOutOfStock}
         >
-          BUY
+          {!isOutOfStock ? "BUY" : "OUT OF STOCK"}
         </button>
       </div>
     </div>

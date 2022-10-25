@@ -1,22 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Actions from "../components/Actions";
 import Description from "../components/Description";
 import Image from "../components/Image";
-import { API_URL } from "../common/constants";
+import { getProductById } from "../common/services";
+import { useDispatch } from "react-redux";
+import { setCurrentItem } from "../store/features/productsSlice";
 
 const ProductDetails = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const [productData, setProductData] = useState({});
+  const [isError, setIsError] = useState(false);
 
   const getProductData = async () => {
-    const response = await fetch(`${API_URL}/product/${id}`);
-    const productData = await response.json();
+    const productResponse = await getProductById(id);
     try {
-      console.log(response, productData, "this is the original data");
-      setProductData(productData);
+      setProductData(productResponse);
+      dispatch(
+        setCurrentItem(`${productResponse.brand} ${productResponse.model}`)
+      );
     } catch {
-      //set error here
+      setIsError(true);
     }
   };
 
@@ -25,8 +30,8 @@ const ProductDetails = () => {
   }, []);
 
   return (
-    <div className="container">
-      {Boolean(productData?.id) ? (
+    <div className="container details-page">
+      {productData?.id ? (
         <>
           <div className="details-layout">
             <div className="details-picture">
@@ -37,6 +42,7 @@ const ProductDetails = () => {
               <Actions
                 storageOptions={productData?.options?.storages}
                 colorOptions={productData?.options?.colors}
+                price={productData.price}
               />
             </div>
           </div>

@@ -2,7 +2,6 @@
 
 ## GENERAL
 
-- save data in localstorage
 - set cool styles))
 - EMPTY /UNKNOWN PRICE?????
 
@@ -32,7 +31,5 @@
 
 ## ACTIONS
 
-- improve option selectors
-- save in header the number of items in the cart (returned as response after add it to the list) [persistent-data] ??????????????
-- semi persistent search filter
-- persistent sorting
+- set success notification after push buy button
+- [desirable] create box to see the items that you have purchased

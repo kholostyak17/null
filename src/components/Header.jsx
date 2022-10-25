@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { resetCart } from "../store/features/productsSlice";
 
 const Header = () => {
-  const itemsCount = useSelector((state) => state.products.cart);
+  const dispatch = useDispatch();
+  const itemsCount = useSelector((state) => state.products.cartItems);
+  const currentItem = useSelector((state) => state.products.currentItem);
 
   return (
     <div className="header">
       <div className="container">
+        <div />
         <Link to="/">
           <img className="nav-logo" src="/logo.png" alt="" />
         </Link>
@@ -20,8 +24,24 @@ const Header = () => {
         >
           @kholostyak17
         </a>
+        <div onClick={() => dispatch(resetCart())}>
+          - {itemsCount} items in cart
+        </div>
       </div>
-      <div>- {itemsCount.length} items in cart</div>
+      {Boolean(currentItem) && (
+        <div className="container">
+          <Link to="/">
+            <button>back</button>
+          </Link>
+          <div onClick={() => dispatch(resetCart())}>
+            <Link to="/">
+              <span>Smartphones</span>
+            </Link>
+            <span> / </span>
+            <span>{currentItem}</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

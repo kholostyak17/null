@@ -12,3 +12,36 @@ export const getProductList = () =>
     .catch((error) => {
       console.error(error);
     });
+
+export const getProductById = (id) =>
+  fetch(`${API_URL}/product/${id}`)
+    .then((response) => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error(response.status);
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+export const buyProduct = (id, data) =>
+  fetch(`${API_URL}/cart`, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  })
+    .then((response) => {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        throw new Error(response.status);
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });

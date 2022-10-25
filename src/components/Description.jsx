@@ -4,13 +4,12 @@ const Description = ({ data }) => {
   const [isTextHidden, setIsTextHidden] = useState(true);
   const listData = Object.entries(data); //transform object to array
 
-  console.log(listData);
   return (
     <div className="description">
       <h1>
         {data?.brand} {data?.model}
       </h1>
-      <p>{data?.price}€</p>
+      <p>{data?.price ? `${data?.price}€` : ""}</p>
       <ul className={isTextHidden && "hidden-description"}>
         {listData?.map((item) => (
           <li key={item[0]}>

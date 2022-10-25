@@ -9,7 +9,10 @@ import {
   changeOrder,
   resetOptions,
 } from "../store/features/sortingSlice";
-import { fetchProductList } from "../store/features/productsSlice";
+import {
+  fetchProductList,
+  removeCurrentItem,
+} from "../store/features/productsSlice";
 
 export const sortCriteriaOptions = [
   { label: "Price", value: SORT_CRITERIA.price },
@@ -33,6 +36,7 @@ const ProductList = () => {
 
   useEffect(() => {
     dispatch(fetchProductList());
+    dispatch(removeCurrentItem());
   }, []);
 
   useEffect(() => {
