@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 // import { API_URL } from "../common/constants";
-import { addItem } from "../store/features/itemsSlice";
+import { addToCart } from "../store/features/productsSlice";
 
 const Actions = ({ storageOptions, colorOptions }) => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const Actions = ({ storageOptions, colorOptions }) => {
     // } catch {
     //   //set error here
     // }
-    dispatch(addItem({ hola: "hola" }));
+    dispatch(addToCart({ hola: "hola" }));
   };
 
   return (

@@ -1,18 +1,23 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setFilter, resetFilter } from "../store/features/searchSlice";
 
-const Search = ({ searchText, setSearchText }) => {
+const Search = () => {
+  const dispatch = useDispatch();
+  const filter = useSelector((state) => state.search.filter);
+
   const setNewTextFilter = (filter) => {
     if (filter.length >= 3) {
-      setSearchText(filter);
+      dispatch(setFilter(filter));
     } else {
-      setSearchText("");
+      dispatch(resetFilter());
     }
   };
 
   return (
     <input
       placeholder="search here)"
-      defaultValue={searchText}
+      defaultValue={filter}
       onChange={(event) => setNewTextFilter(event.target.value)}
       type="text"
     />

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const itemsCount = useSelector((state) => state.items.counter);
+  const itemsCount = useSelector((state) => state.products.counter);
 
   return (
     <div className="header">

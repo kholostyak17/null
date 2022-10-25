@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Item from "../components/Item";
 import Search from "../components/Search";
-import { API_URL, SORT_CRITERIA, SORT_ORDER } from "../common/constants";
+import { SORT_CRITERIA, SORT_ORDER } from "../common/constants";
 import { applySearchFilter, sortList } from "../common/helper";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -9,6 +9,7 @@ import {
   changeOrder,
   resetOptions,
 } from "../store/features/sortingSlice";
+import { fetchProductList } from "../store/features/productsSlice";
 
 export const sortCriteriaOptions = [
   { label: "Price", value: SORT_CRITERIA.price },
@@ -21,53 +22,34 @@ export const sortOrderOptions = [
 ];
 
 const ProductList = () => {
-  const [originalData, setOriginalData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
-  const [sortedData, setSortedData] = useState([]);
-  const [searchText, setSearchText] = useState("");
-  const [isGridEnabled, setIsGridEnabled] = useState(true);
   const dispatch = useDispatch();
+  const originalData = useSelector((state) => state.products.list);
+  const [filteredData, setFilteredData] = useState(originalData);
+  const [sortedData, setSortedData] = useState([]);
+  const [isGridEnabled, setIsGridEnabled] = useState(true);
   const sortingCriteria = useSelector((state) => state.sorting.criteria);
   const sortingOrder = useSelector((state) => state.sorting.order);
-
-  const getData = async () => {
-    const response = await fetch(`${API_URL}/product`);
-    const list = await response.json();
-    try {
-      console.log(response, list, "this is the original data");
-      setOriginalData(list);
-    } catch {
-      //set error here
-    }
-  };
-
-  const getContent = () => {
-    const sortedList = sortList(
-      Boolean(searchText) ? filteredData : originalData,
-      sortingCriteria,
-      sortingOrder
-    );
-    setSortedData(sortedList);
-  };
+  const searchFilter = useSelector((state) => state.search.filter);
 
   useEffect(() => {
-    getData();
+    dispatch(fetchProductList());
   }, []);
 
   useEffect(() => {
-    if (originalData) {
-      getContent();
-    }
-  }, [originalData, filteredData, sortingCriteria, sortingOrder]);
-
-  useEffect(() => {
-    if (searchText) {
-      const filteredList = applySearchFilter(originalData, searchText);
+    //filtering the products if any search filter is applied
+    if (searchFilter) {
+      const filteredList = applySearchFilter(originalData, searchFilter);
       setFilteredData(filteredList);
     } else {
-      setFilteredData([]);
+      setFilteredData(originalData);
     }
-  }, [searchText]);
+  }, [originalData, searchFilter]);
+
+  useEffect(() => {
+    //sorting products after filtering
+    const sortedList = sortList(filteredData, sortingCriteria, sortingOrder);
+    setSortedData(sortedList);
+  }, [filteredData, sortingCriteria, sortingOrder]);
 
   return (
     <div className="container">
@@ -100,10 +82,7 @@ const ProductList = () => {
           </select>
           <button onClick={() => dispatch(resetOptions())}>reset filter</button>
         </div>
-        <Search
-          searchText={searchText}
-          setSearchText={(text) => setSearchText(text)}
-        />
+        <Search />
       </div>
       <div>
         <button onClick={() => setIsGridEnabled(!isGridEnabled)}>
