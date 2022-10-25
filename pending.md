@@ -7,14 +7,11 @@
 
 ## LIST PAGE
 
-- reset filter button
 - show number of items in the list with filters
 
-## HEADER
-
-- add breadcrumbs
-
 ## SEARCH
+
+-reset button
 
 ## ITEM
 

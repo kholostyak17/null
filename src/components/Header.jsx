@@ -9,7 +9,7 @@ const Header = () => {
   const currentItem = useSelector((state) => state.products.currentItem);
 
   return (
-    <div className="header">
+    <div className="header" data-testid="header">
       <div className="container">
         <div />
         <Link to="/">
