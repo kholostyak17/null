@@ -4,19 +4,18 @@ import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./tests";
-import "whatwg-fetch";
-import ProductDetails from "../src/pages/ProductDetails";
+import Header from "../../src/components/Header";
 
-describe("ProductDetails component", () => {
+describe("Header component", () => {
   const component = render(
     <BrowserRouter>
       <Provider store={store}>
-        <ProductDetails />
+        <Header />
       </Provider>
     </BrowserRouter>
   );
 
   it("Renders successfully", () => {
-    expect(component.getByTestId("details-page")).toBeInTheDocument();
+    expect(component.getByTestId("header")).toBeInTheDocument();
   });
 });

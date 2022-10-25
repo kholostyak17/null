@@ -4,18 +4,18 @@ import { render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./tests";
-import Header from "../src/components/Header";
+import Image from "../../src/components/Image";
 
-describe("Header component", () => {
+describe("Image component", () => {
   const component = render(
     <BrowserRouter>
       <Provider store={store}>
-        <Header />
+        <Image />
       </Provider>
     </BrowserRouter>
   );
 
   it("Renders successfully", () => {
-    expect(component.getByTestId("header")).toBeInTheDocument();
+    expect(component.getByTestId("image")).toBeInTheDocument();
   });
 });
