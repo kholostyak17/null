@@ -35,6 +35,7 @@ export const productsSlice = createSlice({
       console.log(action, "fullfilled");
       state.list = action.payload;
       state.isError = false;
+      state.isLoading = false;
     });
     builder.addCase(fetchProductList.rejected, (state, action) => {
       console.log(action, "rejected");

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  const itemsCount = useSelector((state) => state.products.counter);
+  const itemsCount = useSelector((state) => state.products.cart);
 
   return (
     <div className="header">
@@ -20,9 +20,8 @@ const Header = () => {
         >
           @kholostyak17
         </a>
-        {" - "}
-        {itemsCount} items
       </div>
+      <div>- {itemsCount.length} items in cart</div>
     </div>
   );
 };
