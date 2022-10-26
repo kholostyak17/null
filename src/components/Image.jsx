@@ -5,7 +5,7 @@ const Image = ({ imageUrl, altText }) => {
     <img
       className="image-picture"
       data-testid="image"
-      src={imageUrl}
+      src={imageUrl || "mobile_placeholder.jpg"}
       alt={altText}
     />
   );

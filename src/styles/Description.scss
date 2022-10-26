@@ -1,7 +1,27 @@
+@use "variables";
+
 .description {
+  padding-left: 0.3rem;
+}
+
+.description-element {
+  display: block;
+  opacity: 0.8;
 }
 
 .hidden-description {
   max-height: 12rem;
   overflow: hidden;
+}
+
+.price {
+  color: variables.$primary-color;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.expand-description-button {
+  color: variables.$primary-color;
+  font-weight: bold;
+  cursor: pointer;
 }

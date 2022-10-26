@@ -5,16 +5,19 @@
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  margin: 0 1rem;
+  margin-left: 1rem;
   @media (max-width: 800px) {
     justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 2.5rem;
   }
 }
 
 .search-input {
   border-radius: 0.2rem;
   border: 0.5px solid variables.$primary-color;
-  margin: 0.5rem 1rem;
+  margin-left: 1rem;
   padding: 0 1rem;
   color: variables.$text-color;
   font-family: inherit;

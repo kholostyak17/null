@@ -60,73 +60,75 @@ const ProductList = () => {
   }, [filteredData, sortingCriteria, sortingOrder]);
 
   return (
-    <div className="container list-page" data-testid="list-page">
-      <h1 className="title list-page-title">Smartphones</h1>
-      <div className="list-bar">
-        <div className="sorting-bar">
-          <div className="sorting-selector">
-            <img
-              className="sorting-icon"
-              src="icons/sort_criteria.svg"
-              width="20px"
-            />
-            <select
-              className="selector criteria-selector"
-              value={sortingCriteria}
-              onChange={(event) => {
-                dispatch(changeCriteria(event.target.value));
-              }}
-            >
-              {sortCriteriaOptions.map((item) => (
-                <option key={item.value} value={item.value}>
-                  {item.label}
-                </option>
-              ))}
-            </select>
+    <div className="container">
+      <div className="list-page" data-testid="list-page">
+        <h1 className="title list-page-title">Smartphones</h1>
+        <div className="list-bar">
+          <div className="sorting-bar">
+            <div className="sorting-selector">
+              <img
+                className="sorting-icon"
+                src="icons/sort_criteria.svg"
+                width="20px"
+              />
+              <select
+                className="selector criteria-selector"
+                value={sortingCriteria}
+                onChange={(event) => {
+                  dispatch(changeCriteria(event.target.value));
+                }}
+              >
+                {sortCriteriaOptions.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="sorting-selector">
+              <img
+                className="sorting-icon"
+                src="icons/sort_order.svg"
+                width="20px"
+              />
+              <select
+                className="selector order-selector"
+                value={sortingOrder}
+                onChange={(event) => {
+                  dispatch(changeOrder(event.target.value));
+                }}
+              >
+                {sortOrderOptions.map((item) => (
+                  <option key={item.value} value={item.value}>
+                    {item.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            {isResetFilterButtonEnabled && (
+              <span
+                className="reset-filter"
+                onClick={() => dispatch(resetOptions())}
+              >
+                Reset filter
+              </span>
+            )}
           </div>
-          <div className="sorting-selector">
+          <Search />
+        </div>
+        <div>
+          <div className="view-mode-button">
             <img
-              className="sorting-icon"
-              src="icons/sort_order.svg"
-              width="20px"
+              src={`icons/${!isGridEnabled ? "grid" : "list"}.svg`}
+              width="24px"
+              onClick={() => setIsGridEnabled(!isGridEnabled)}
             />
-            <select
-              className="selector order-selector"
-              value={sortingOrder}
-              onChange={(event) => {
-                dispatch(changeOrder(event.target.value));
-              }}
-            >
-              {sortOrderOptions.map((item) => (
-                <option key={item.value} value={item.value}>
-                  {item.label}
-                </option>
-              ))}
-            </select>
           </div>
-          {isResetFilterButtonEnabled && (
-            <span
-              className="reset-filter"
-              onClick={() => dispatch(resetOptions())}
-            >
-              Reset filter
-            </span>
-          )}
-        </div>
-        <Search />
-      </div>
-      <div>
-        <div className="view-mode-button">
-          <img
-            src={`icons/${!isGridEnabled ? "grid" : "list"}.svg`}
-            width="24px"
-            onClick={() => setIsGridEnabled(!isGridEnabled)}
-          />
-        </div>
-        <div className={`list-items ${isGridEnabled ? "grid" : "list"}`}>
-          {sortedData.map((item) => (
-            <Item key={item.id} gridEnabled={isGridEnabled} data={item} />
-          ))}
+          <div className={`items ${isGridEnabled ? "grid" : "list"}`}>
+            {sortedData.map((item) => (
+              <Item key={item.id} gridEnabled={isGridEnabled} data={item} />
+            ))}
+          </div>
         </div>
       </div>
     </div>

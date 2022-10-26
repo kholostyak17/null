@@ -14,7 +14,7 @@ const Actions = ({ storageOptions = [], colorOptions = [], price }) => {
   const buy = async (data) => {
     const response = await buyProduct(data);
     dispatch(incrementCart(response.count));
-    alert("Congratulations, you have added a new item to your cart.");
+    alert("Congratulations, you have added a new item to your cart!");
   };
 
   return (
@@ -23,6 +23,7 @@ const Actions = ({ storageOptions = [], colorOptions = [], price }) => {
         <h3>Options</h3>
         {Boolean(storageOptions?.length) && (
           <select
+            className="selector"
             name="storage"
             onChange={(event) => setStorageCode(event.target.value)}
           >
@@ -35,6 +36,7 @@ const Actions = ({ storageOptions = [], colorOptions = [], price }) => {
         )}
         {Boolean(colorOptions?.length) && (
           <select
+            className="selector"
             name="color"
             onChange={(event) => setColorCode(event.target.value)}
             disabled={!colorOptions.length}
@@ -49,10 +51,11 @@ const Actions = ({ storageOptions = [], colorOptions = [], price }) => {
       </div>
       <div className="buy-section">
         <button
+          className={`${!isOutOfStock && "hover-animation"} buy-button`}
           onClick={() => buy({ id, colorCode, storageCode })}
           disabled={isOutOfStock}
         >
-          {!isOutOfStock ? "BUY" : "OUT OF STOCK"}
+          {!isOutOfStock ? "BUY" : "Out of stock"}
         </button>
       </div>
     </div>

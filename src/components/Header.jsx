@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { resetCart } from "../store/features/productsSlice";
-// import backIcon from "icons/back.svg";
-const actionsIcon = `${process.env.PUBLIC_URL}/icons/back.svg`;
+
 const Header = () => {
   const dispatch = useDispatch();
   const itemsCount = useSelector((state) => state.products.cartItems);
@@ -15,7 +14,7 @@ const Header = () => {
         <div className="nav-aux-item" />
         <div className="nav-center-item">
           <Link to="/" className="no-style">
-            <a className="nav-logo">name</a>
+            <span className="nav-logo">name</span>
           </Link>
           <span className="nav-credits">
             by{" "}
@@ -31,8 +30,12 @@ const Header = () => {
         </div>
         <div
           onClick={() => {
-            dispatch(resetCart());
-            alert("You have successfully removed the products from your cart.");
+            if (itemsCount) {
+              dispatch(resetCart());
+              alert(
+                "You have successfully removed the products from your cart."
+              );
+            }
           }}
           className={`cart-box ${Boolean(!itemsCount) && "no-hover"}`}
         >
@@ -42,10 +45,10 @@ const Header = () => {
       </div>
       {Boolean(currentItem) && (
         <div className="container nav-second-row">
-          <Link to="/">
+          <Link to="/" className="back-button">
             <img src="icons/back.svg" width="24px" />
           </Link>
-          <div onClick={() => dispatch(resetCart())}>
+          <div className="breadcrumb">
             <Link to="/" className="no-style">
               <span className="breadcrumb-link">Smartphones</span>
             </Link>

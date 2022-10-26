@@ -18,7 +18,7 @@ const Search = () => {
     <div data-testid="search" className="search-box">
       <img className="-icon" src="icons/search.svg" width="22px" />
       <input
-        className="search-input"
+        className="search-input hover-animation"
         placeholder="Type to search..."
         defaultValue={filter}
         onChange={(event) => setNewTextFilter(event.target.value)}

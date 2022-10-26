@@ -48,7 +48,7 @@ const ProductDetails = () => {
           </div>
         </>
       ) : (
-        <div>loading...</div>
+        <div>{isError ? "loading error!" : "loading..."}</div>
       )}
     </div>
   );

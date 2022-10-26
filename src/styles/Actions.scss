@@ -1,7 +1,24 @@
+@use "variables";
+
 .actions {
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 .buy-section {
   margin-top: 3rem;
+}
+
+.buy-button {
+  padding: 1rem 4rem;
+  background-color: variables.$primary-color;
+  border: 1px solid variables.$primary-color;
+  border-radius: 0.3rem;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: bold;
+  color: rgb(16, 18, 26);
+  &:disabled {
+    background-color: rgba(86, 84, 84, 0.937);
+    border-color: grey;
+  }
 }

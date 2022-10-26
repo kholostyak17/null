@@ -7,11 +7,12 @@
 @use "styles/Image.scss";
 @use "styles/Item.scss";
 @use "styles/Search.scss";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Rubik", sans-serif;
   color: whitesmoke;
   background: rgb(16, 18, 26);
 }
@@ -49,6 +50,10 @@ a {
   cursor: default;
 }
 
+.no-margins {
+  margin: 0;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
@@ -64,4 +69,8 @@ a {
   background-color: transparent;
   color: variables.$text-color;
   font-family: inherit;
+}
+
+.hover-animation:hover {
+  box-shadow: #17a6bc70 0px 4px 24px;
 }
