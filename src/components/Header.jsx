@@ -14,7 +14,9 @@ const Header = () => {
         <div className="nav-aux-item" />
         <div className="nav-center-item">
           <Link to="/" className="no-style">
-            <span className="nav-logo">name</span>
+            <span className="nav-logo" data-testid="logo">
+              name
+            </span>
           </Link>
           <span className="nav-credits">
             by{" "}
@@ -29,6 +31,7 @@ const Header = () => {
           </span>
         </div>
         <div
+          data-testid="cart"
           onClick={() => {
             if (itemsCount) {
               dispatch(resetCart());

@@ -28,7 +28,10 @@ const Description = ({ data = {} }) => {
         {data?.brand} {data?.model}
       </h1>
       <p className="price">{data?.price ? `${data?.price}€` : ""}</p>
-      <div className={`description ${isTextHidden && "hidden-description"}`}>
+      <div
+        data-testid="features"
+        className={`description ${isTextHidden && "hidden-description"}`}
+      >
         {listData?.map((item) => {
           const lowercaseKey = item[0].replace(/([A-Z])/g, " $1");
           const keyLabel =
