@@ -1,0 +1,24 @@
+@use "variables";
+
+.search-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin: 0 1rem;
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
+}
+
+.search-input {
+  border-radius: 0.2rem;
+  border: 0.5px solid variables.$primary-color;
+  margin: 0.5rem 1rem;
+  padding: 0 1rem;
+  color: variables.$text-color;
+  font-family: inherit;
+  min-width: 16rem;
+  min-height: 2rem;
+  background-color: rgba(0, 0, 0, 0.438);
+}

@@ -1,21 +1,18 @@
-@use "./styles/ProductList.scss";
-@use "./styles/ProductDetails.scss";
-@use "./styles/Actions.scss";
-@use "./styles/Description.scss";
-@use "./styles/Header.scss";
-@use "./styles/Image.scss";
-@use "./styles/Item.scss";
-@use "./styles/Search.scss";
-
-$primary-color: #17a6bc;
-$secondary-color: grey;
-$text-color: rgba(255, 255, 255, 0.8);
+@use "styles/variables.scss";
+@use "styles/ProductList.scss";
+@use "styles/ProductDetails.scss";
+@use "styles/Actions.scss";
+@use "styles/Description.scss";
+@use "styles/Header.scss";
+@use "styles/Image.scss";
+@use "styles/Item.scss";
+@use "styles/Search.scss";
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  color: $text-color;
+  font-family: "Courier New", Courier, monospace;
+  color: whitesmoke;
   background: rgb(16, 18, 26);
 }
 
@@ -48,8 +45,23 @@ a {
   }
 }
 
+.no-hover {
+  cursor: default;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
   max-width: 80rem;
+}
+
+.selector {
+  border-radius: none;
+  border: none;
+  border-bottom: 1px solid variables.$primary-color;
+  margin: 0.5rem;
+  padding: 0.25rem;
+  background-color: transparent;
+  color: variables.$text-color;
+  font-family: inherit;
 }

@@ -5,8 +5,7 @@ const initialState = {
   list: [],
   isError: false,
   isLoading: true,
-  cartItems: localStorage.getItem("cartItems") || 0,
-  // cart: [],
+  cartItems: parseInt(localStorage.getItem("cartItems")) || 0,
   currentItem: "",
 };
 
@@ -23,7 +22,7 @@ export const productsSlice = createSlice({
   initialState,
   reducers: {
     incrementCart: (state, action) => {
-      const totalCartItems = state.cartItems + action.payload;
+      const totalCartItems = state.cartItems + parseInt(action.payload);
       state.cartItems = totalCartItems;
       localStorage.setItem("cartItems", totalCartItems);
     },
@@ -31,10 +30,6 @@ export const productsSlice = createSlice({
       state.cartItems = 0;
       localStorage.removeItem("cartItems");
     },
-    // addToCart: (state, action) => {
-    //   state.cartItems += 1;
-    //   state.cart = [...state.cart, action.payload];
-    // },
     setCurrentItem: (state, action) => {
       state.currentItem = action.payload;
     },
@@ -55,12 +50,7 @@ export const productsSlice = createSlice({
   },
 });
 
-export const {
-  incrementCart,
-  resetCart,
-  // addToCart,
-  setCurrentItem,
-  removeCurrentItem,
-} = productsSlice.actions;
+export const { incrementCart, resetCart, setCurrentItem, removeCurrentItem } =
+  productsSlice.actions;
 
 export default productsSlice.reducer;

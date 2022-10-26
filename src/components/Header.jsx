@@ -29,7 +29,13 @@ const Header = () => {
             </a>
           </span>
         </div>
-        <div onClick={() => dispatch(resetCart())} className="cart-box">
+        <div
+          onClick={() => {
+            dispatch(resetCart());
+            alert("You have successfully removed the products from your cart.");
+          }}
+          className={`cart-box ${Boolean(!itemsCount) && "no-hover"}`}
+        >
           <img src="icons/cart.svg" width="24px" />
           <div className="items-count">{itemsCount ? itemsCount : ""}</div>
         </div>

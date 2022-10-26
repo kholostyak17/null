@@ -15,13 +15,16 @@ const Search = () => {
   };
 
   return (
-    <input
-      data-testid="search"
-      placeholder="search here)"
-      defaultValue={filter}
-      onChange={(event) => setNewTextFilter(event.target.value)}
-      type="text"
-    />
+    <div data-testid="search" className="search-box">
+      <img className="-icon" src="icons/search.svg" width="22px" />
+      <input
+        className="search-input"
+        placeholder="Type to search..."
+        defaultValue={filter}
+        onChange={(event) => setNewTextFilter(event.target.value)}
+        type="text"
+      />
+    </div>
   );
 };
 

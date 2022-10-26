@@ -14,7 +14,7 @@ const Actions = ({ storageOptions = [], colorOptions = [], price }) => {
   const buy = async (data) => {
     const response = await buyProduct(data);
     dispatch(incrementCart(response.count));
-    // dispatch(addToCart(data));
+    alert("Congratulations, you have added a new item to your cart.");
   };
 
   return (
