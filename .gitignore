@@ -5,6 +5,7 @@
 
 # testing
 /coverage
+/__test__/cypress/videos
 
 # production
 /build
