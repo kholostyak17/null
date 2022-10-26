@@ -13,9 +13,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && cypress open --project ./__test__",
+    "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject",
     "cypress": "cypress open --project ./__test__"
   },
   "browserslist": {
