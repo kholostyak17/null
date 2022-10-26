@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { buyProduct } from "../common/services";
@@ -63,3 +64,9 @@ const Actions = ({ storageOptions = [], colorOptions = [], price }) => {
 };
 
 export default Actions;
+
+Actions.propTypes = {
+  storageOptions: PropTypes.array,
+  colorOptions: PropTypes.array,
+  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};

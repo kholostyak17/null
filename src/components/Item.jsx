@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const Item = ({ data = {}, gridEnabled = true }) => {
@@ -40,3 +41,8 @@ const Item = ({ data = {}, gridEnabled = true }) => {
 };
 
 export default Item;
+
+Item.propTypes = {
+  data: PropTypes.object,
+  gridEnabled: PropTypes.bool,
+};

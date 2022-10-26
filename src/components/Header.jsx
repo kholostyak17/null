@@ -24,7 +24,7 @@ const Header = () => {
               className="no-style"
               href="https://github.com/kholostyak17"
               target="_blank"
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer" }} rel="noreferrer"
             >
               @kholostyak17
             </a>

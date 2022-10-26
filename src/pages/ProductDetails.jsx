@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Actions from "../components/Actions";
 import Description from "../components/Description";
 import Image from "../components/Image";

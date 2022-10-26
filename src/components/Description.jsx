@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 const Description = ({ data = {} }) => {
   const [features, setFeatures] = useState({});
@@ -58,3 +59,7 @@ const Description = ({ data = {} }) => {
 };
 
 export default Description;
+
+Description.propTypes = {
+  data: PropTypes.object,
+};

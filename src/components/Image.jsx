@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Image = ({ imageUrl, altText }) => {
   return (
@@ -12,3 +13,8 @@ const Image = ({ imageUrl, altText }) => {
 };
 
 export default Image;
+
+Image.propTypes = {
+  imageUrl: PropTypes.string,
+  altText: PropTypes.string,
+};

@@ -33,6 +33,7 @@ const ProductList = () => {
   const sortingCriteria = useSelector((state) => state.sorting.criteria);
   const sortingOrder = useSelector((state) => state.sorting.order);
   const searchFilter = useSelector((state) => state.search.filter);
+  const isError = useSelector((state) => state.products.isError);
   const isResetFilterButtonEnabled = !(
     sortingCriteria === SORT_CRITERIA.name &&
     sortingOrder === SORT_ORDER.ascending
@@ -125,9 +126,13 @@ const ProductList = () => {
             />
           </div>
           <div className={`items ${isGridEnabled ? "grid" : "list"}`}>
-            {sortedData.map((item) => (
-              <Item key={item.id} gridEnabled={isGridEnabled} data={item} />
-            ))}
+            {sortedData.length ? (
+              sortedData.map((item) => (
+                <Item key={item.id} gridEnabled={isGridEnabled} data={item} />
+              ))
+            ) : (
+              <div>{isError ? "loading error!" : "loading..."}</div>
+            )}
           </div>
         </div>
       </div>
