@@ -12,7 +12,7 @@ const Actions = ({ storageOptions = [], colorOptions = [], price }) => {
   const isOutOfStock = !colorOptions.length || !storageOptions.length || !price;
 
   const buy = async (data) => {
-    const response = await buyProduct(id, data);
+    const response = await buyProduct(data);
     dispatch(incrementCart(response.count));
     // dispatch(addToCart(data));
   };

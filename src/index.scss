@@ -7,13 +7,34 @@
 @use "./styles/Item.scss";
 @use "./styles/Search.scss";
 
+$primary-color: #17a6bc;
+$secondary-color: grey;
+$text-color: rgba(255, 255, 255, 0.8);
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: wheat;
-  background: #2b0606;
+  color: $text-color;
+  background: rgb(16, 18, 26);
 }
+
+.div-app {
+  background: linear-gradient(
+      325deg,
+      rgba(10, 91, 40, 0.25) 3.7%,
+      rgba(255, 255, 255, 0) 40.2%
+    ),
+    linear-gradient(
+      250.93deg,
+      rgba(24, 53, 157, 0.244) 3.7%,
+      rgba(255, 255, 255, 0) 36.5%
+    ),
+    none;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
 a {
   &.no-style:link {
     text-decoration: inherit;
@@ -30,5 +51,5 @@ a {
 .container {
   width: 100%;
   margin: 0 auto;
-  max-width: 90rem;
+  max-width: 80rem;
 }

@@ -1,12 +1,71 @@
+@use "variables";
+
 .header {
-  width: 100%;
+  width: calc(100% - 2rem);
   height: 5rem;
-  background-color: darkred;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-center-item {
+  max-width: 120px;
+  white-space: nowrap;
 }
 
 .nav-logo {
-  margin-top: 0.5rem;
-  max-height: 4rem;
+  font-size: 42px;
+  color: variables.$primary-color;
+  max-width: 120px;
+  cursor: pointer;
 }
+
+.nav-credits {
+  font-size: 11px;
+  word-wrap: normal;
+  margin-left: 0.5rem;
+  letter-spacing: 0.03rem;
+}
+
+.cart-box {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  &:hover {
+    color: rgba(183, 63, 63, 0.997);
+  }
+}
+
+.items-count {
+  min-width: 20px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.nav-second-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.breadcrumb-link {
+  color: variables.$primary-color !important;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .nav-aux-item {
+    display: none;
+  }
+  .nav-credits {
+    display: none;
+  }
+} ;

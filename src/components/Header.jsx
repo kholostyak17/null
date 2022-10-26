@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { resetCart } from "../store/features/productsSlice";
-
+// import backIcon from "icons/back.svg";
+const actionsIcon = `${process.env.PUBLIC_URL}/icons/back.svg`;
 const Header = () => {
   const dispatch = useDispatch();
   const itemsCount = useSelector((state) => state.products.cartItems);
@@ -10,32 +11,37 @@ const Header = () => {
 
   return (
     <div className="header" data-testid="header">
-      <div className="container">
-        <div />
-        <Link to="/">
-          <img className="nav-logo" src="/logo.png" alt="" />
-        </Link>
-        by{" "}
-        <a
-          className="no-style"
-          href="https://github.com/kholostyak17"
-          target="_blank"
-          style={{ cursor: "pointer" }}
-        >
-          @kholostyak17
-        </a>
-        <div onClick={() => dispatch(resetCart())}>
-          - {itemsCount} items in cart
+      <div className="container nav-content">
+        <div className="nav-aux-item" />
+        <div className="nav-center-item">
+          <Link to="/" className="no-style">
+            <a className="nav-logo">name</a>
+          </Link>
+          <span className="nav-credits">
+            by{" "}
+            <a
+              className="no-style"
+              href="https://github.com/kholostyak17"
+              target="_blank"
+              style={{ cursor: "pointer" }}
+            >
+              @kholostyak17
+            </a>
+          </span>
+        </div>
+        <div onClick={() => dispatch(resetCart())} className="cart-box">
+          <img src="icons/cart.svg" width="24px" />
+          <div className="items-count">{itemsCount ? itemsCount : ""}</div>
         </div>
       </div>
       {Boolean(currentItem) && (
-        <div className="container">
+        <div className="container nav-second-row">
           <Link to="/">
-            <button>back</button>
+            <img src="icons/back.svg" width="24px" />
           </Link>
           <div onClick={() => dispatch(resetCart())}>
-            <Link to="/">
-              <span>Smartphones</span>
+            <Link to="/" className="no-style">
+              <span className="breadcrumb-link">Smartphones</span>
             </Link>
             <span> / </span>
             <span>{currentItem}</span>
