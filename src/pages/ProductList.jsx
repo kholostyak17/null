@@ -34,6 +34,7 @@ const ProductList = () => {
   const sortingOrder = useSelector((state) => state.sorting.order);
   const searchFilter = useSelector((state) => state.search.filter);
   const isError = useSelector((state) => state.products.isError);
+  const isLoading = useSelector((state) => state.products.isLoading);
   const isResetFilterButtonEnabled = !(
     sortingCriteria === SORT_CRITERIA.name &&
     sortingOrder === SORT_ORDER.ascending
@@ -118,11 +119,13 @@ const ProductList = () => {
           <Search />
         </div>
         <div>
-          <div className="view-mode-button">
+          <div
+            className="view-mode-button"
+            onClick={() => setIsGridEnabled(!isGridEnabled)}
+          >
             <img
               src={`icons/${!isGridEnabled ? "grid" : "list"}.svg`}
               width="24px"
-              onClick={() => setIsGridEnabled(!isGridEnabled)}
             />
           </div>
           <div className={`items ${isGridEnabled ? "grid" : "list"}`}>
@@ -131,7 +134,11 @@ const ProductList = () => {
                 <Item key={item.id} gridEnabled={isGridEnabled} data={item} />
               ))
             ) : (
-              <div>{isError ? "loading error!" : "loading..."}</div>
+              <div className="empty-list-message">
+                {(isError && "loading error!") ||
+                  (isLoading && "loading...") ||
+                  "no items"}
+              </div>
             )}
           </div>
         </div>

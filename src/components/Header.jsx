@@ -15,7 +15,7 @@ const Header = () => {
         <div className="nav-center-item">
           <Link to="/" className="no-style">
             <span className="nav-logo" data-testid="logo">
-              name
+              null
             </span>
           </Link>
           <span className="nav-credits">
@@ -24,7 +24,8 @@ const Header = () => {
               className="no-style"
               href="https://github.com/kholostyak17"
               target="_blank"
-              style={{ cursor: "pointer" }} rel="noreferrer"
+              style={{ cursor: "pointer" }}
+              rel="noreferrer"
             >
               @kholostyak17
             </a>

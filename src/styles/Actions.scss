@@ -17,8 +17,10 @@
   font-family: inherit;
   font-weight: bold;
   color: rgb(16, 18, 26);
+  cursor: pointer;
   &:disabled {
     background-color: rgba(86, 84, 84, 0.937);
     border-color: grey;
+    cursor: default;
   }
 }
