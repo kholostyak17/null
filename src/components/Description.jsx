@@ -31,7 +31,7 @@ const Description = ({ data = {} }) => {
       <p className="price">{data?.price ? `${data?.price}€` : ""}</p>
       <div
         data-testid="features"
-        className={`description ${isTextHidden && "hidden-description"}`}
+        className={`description stats ${isTextHidden ? "hidden-stats" : ""}`}
       >
         {listData?.map((item) => {
           const lowercaseKey = item[0].replace(/([A-Z])/g, " $1");
@@ -40,7 +40,10 @@ const Description = ({ data = {} }) => {
           return (
             Boolean(item[1].toString()) && (
               <span className="description-element" key={item[0]}>
-                - {keyLabel}: {item[1].toString()}
+                {keyLabel}: {item[1].toString()},{"  "}
+                {"  "}
+                {"  "}
+                {"  "}
               </span>
             )
           );

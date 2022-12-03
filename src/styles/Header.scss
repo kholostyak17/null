@@ -41,7 +41,9 @@
   flex-wrap: nowrap;
   align-items: center;
   &:hover {
+    transition: all 0.25s ease-in-out;
     color: rgba(183, 63, 63, 0.997);
+    cursor: not-allowed;
   }
 }
 

@@ -48,7 +48,9 @@ const ProductDetails = () => {
           </div>
         </>
       ) : (
-        <div>{isError ? "loading error!" : "loading..."}</div>
+        <div className="empty-list-message">
+          {isError ? "loading error!" : "loading..."}
+        </div>
       )}
     </div>
   );

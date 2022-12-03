@@ -5,12 +5,15 @@
 }
 
 .description-element {
-  display: block;
   opacity: 0.8;
 }
 
-.hidden-description {
-  max-height: 12rem;
+.stats {
+  text-align: start;
+}
+
+.hidden-stats {
+  max-height: 6rem;
   overflow: hidden;
 }
 
@@ -21,6 +24,8 @@
 }
 
 .expand-description-button {
+  text-align: start;
+  margin-left: 5px;
   color: variables.$primary-color;
   cursor: pointer;
 }

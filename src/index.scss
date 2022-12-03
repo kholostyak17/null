@@ -13,26 +13,32 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Rubik", sans-serif;
-  color: whitesmoke;
+  color: #d6f0f0;
   background: rgb(16, 18, 26);
 }
 
 option {
   background-color: #10121a;
-  color: wheat;
+  color: #d6f0f0;
   padding: 10px !important;
+}
+
+input:focus-visible {
+  outline-width: 0;
+  outline: none;
+  border: 0px;
 }
 
 .div-app {
   background: linear-gradient(
       325deg,
       rgba(10, 91, 40, 0.25) 3.7%,
-      rgba(255, 255, 255, 0) 40.2%
+      rgb(135 12 247 / 3%) 40.2%
     ),
     linear-gradient(
       250.93deg,
       rgba(24, 53, 157, 0.244) 3.7%,
-      rgba(255, 255, 255, 0) 36.5%
+      rgb(0 102 255 / 6%) 36.5%
     ),
     none;
   background-attachment: fixed;
@@ -78,5 +84,6 @@ a {
 }
 
 .hover-animation:hover {
-  box-shadow: #17a6bc70 0px 4px 24px;
+  transition: all 0.25s ease-in-out;
+  box-shadow: #17a6bc70 0px 4px 16px;
 }

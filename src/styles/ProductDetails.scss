@@ -27,6 +27,7 @@
   flex-direction: column;
   width: calc(100% - 4rem);
   padding-left: 2rem;
+  text-align: center;
 
   @media (max-width: 960px) {
     width: initial;

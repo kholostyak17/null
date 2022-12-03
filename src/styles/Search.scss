@@ -15,8 +15,9 @@
 }
 
 .search-input {
-  border-radius: 0.2rem;
-  border: 0.5px solid variables.$primary-color;
+  border-radius: 5px;
+  box-shadow: 0 0 8px 2px #00c8d26e;
+  border: 0;
   margin-left: 1rem;
   padding: 0 1rem;
   color: variables.$text-color;
