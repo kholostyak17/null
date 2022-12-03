@@ -1,0 +1,49 @@
+{
+  "id": "vewzlidGwx6t04-mWes0_",
+  "brand": "Acer",
+  "model": "Liquid M220",
+  "price": "80",
+  "imgUrl": "https://null-brown.vercel.app/api/images/vewzlidGwx6t04-mWes0_.jpg",
+  "networkTechnology": "GSM / HSPA",
+  "networkSpeed": "HSPA 21.1/5.76 Mbps",
+  "gprs": "Yes",
+  "edge": "Yes",
+  "announced": "2015  March",
+  "status": "Available. Released 2015  May",
+  "dimentions": "124.9 x 64 x 9.6 mm (4.92 x 2.52 x 0.38 in)",
+  "weight": "119",
+  "sim": [
+    "Single SIM (Mini-SIM) or Dual SIM (Mini-SIM/Micro-SIM",
+    "dual stand-by)"
+  ],
+  "displayType": "TFT capacitive touchscreen",
+  "displayResolution": "4.0 inches (~57.0% screen-to-body ratio)",
+  "displaySize": "480 x 800 pixels (~233 ppi pixel density)",
+  "os": "Microsoft Windows Phone 8.1",
+  "cpu": "Dual-core 1.2 GHz Cortex-A7",
+  "chipset": "Qualcomm MSM8210 Snapdragon 200",
+  "gpu": "Adreno 302",
+  "externalMemory": "microSD  up to 32 GB (dedicated slot)",
+  "internalMemory": ["4 GB"],
+  "ram": "512 MB RAM - Liquid M220",
+  "primaryCamera": ["5 MP", "autofocus", "LED flash"],
+  "secondaryCmera": "2 MP",
+  "speaker": "Yes",
+  "audioJack": "Yes",
+  "wlan": ["Wi-Fi 802.11 b/g/n", "hotspot"],
+  "bluetooth": ["4.0", "A2DP"],
+  "gps": "Yes with A-GPS",
+  "nfc": "",
+  "radio": "FM radio",
+  "usb": "microUSB 2.0",
+  "sensors": ["Accelerometer", "proximity"],
+  "battery": "Removable Li-Ion 1300 mAh battery",
+  "colors": ["Mystic Black", "Pure White"],
+  "options": {
+    "colors": [
+      { "code": 1000, "name": "Mystic Black" },
+      { "code": 1001, "name": "Pure White" }
+    ],
+    "storages": [{ "code": 2000, "name": "4 GB" }]
+  }
+}

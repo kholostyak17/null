@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { buyProduct } from "../common/services";
+// import { buyProduct } from "../common/services";
 import { incrementCart } from "../store/features/productsSlice";
 
 const Actions = ({ storageOptions = [], colorOptions = [], price }) => {
@@ -12,9 +12,10 @@ const Actions = ({ storageOptions = [], colorOptions = [], price }) => {
   const [colorCode, setColorCode] = useState(colorOptions?.[0]?.code);
   const isOutOfStock = !colorOptions.length || !storageOptions.length || !price;
 
-  const buy = async (data) => {
-    const response = await buyProduct(data);
-    dispatch(incrementCart(response.count));
+  // const buy = async (data) => {
+  const buy = async () => {
+    // const response = await buyProduct(data);
+    dispatch(incrementCart(1));
     alert("Congratulations, you have added a new item to your cart!");
   };
 
@@ -56,7 +57,7 @@ const Actions = ({ storageOptions = [], colorOptions = [], price }) => {
           onClick={() => buy({ id, colorCode, storageCode })}
           disabled={isOutOfStock}
         >
-          {!isOutOfStock ? "BUY" : "Out of stock"}
+          {!isOutOfStock ? "Add to cart" : "Out of stock"}
         </button>
       </div>
     </div>

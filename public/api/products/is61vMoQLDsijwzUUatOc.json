@@ -1,0 +1,49 @@
+{
+  "id": "is61vMoQLDsijwzUUatOc",
+  "brand": "Acer",
+  "model": "Iconia Tab A3",
+  "price": "190",
+  "imgUrl": "https://null-brown.vercel.app/api/images/is61vMoQLDsijwzUUatOc.jpg",
+  "networkTechnology": "GSM / HSPA",
+  "networkSpeed": "HSPA 21.1/5.76 Mbps",
+  "gprs": "Yes",
+  "edge": "Up to 236.8 kbps",
+  "announced": "2013  September",
+  "status": "Available. Released 2013  November",
+  "dimentions": "260 x 175 x 10.2 mm (10.24 x 6.89 x 0.40 in)",
+  "weight": "560",
+  "sim": "Micro-SIM",
+  "displayType": "LED-backlit IPS LCD capacitive touchscreen  16M colors",
+  "displayResolution": "10.1 inches (~65.0% screen-to-body ratio)",
+  "displaySize": "800 x 1280 pixels (~149 ppi pixel density)",
+  "os": "Android 4.2.2 (Jelly Bean)",
+  "cpu": "Quad-core 1.2 GHz Cortex-A7",
+  "chipset": "Mediatek MT8125T - Wi-Fi",
+  "gpu": "PowerVR SGX544",
+  "externalMemory": "microSD  up to 32 GB (dedicated slot)",
+  "internalMemory": ["16 GB", "32 GB"],
+  "ram": "1 GB RAM",
+  "primaryCamera": "5 MP",
+  "secondaryCmera": "VGA",
+  "speaker": "Yes with stereo speakers",
+  "audioJack": "Yes",
+  "wlan": ["Wi-Fi 802.11 b/g/n", "hotspot"],
+  "bluetooth": ["4.0", "A2DP"],
+  "gps": "Yes with A-GPS",
+  "nfc": "",
+  "radio": "No",
+  "usb": ["microUSB 2.0", "USB Host"],
+  "sensors": ["Accelerometer", "gyro"],
+  "battery": "Non-removable Li-Po 7300 mAh battery (27 Wh)",
+  "colors": ["Black/Silver", "White"],
+  "options": {
+    "colors": [
+      { "code": 1000, "name": "Black/Silver" },
+      { "code": 1001, "name": "White" }
+    ],
+    "storages": [
+      { "code": 2000, "name": "16 GB" },
+      { "code": 2001, "name": "32 GB" }
+    ]
+  }
+}

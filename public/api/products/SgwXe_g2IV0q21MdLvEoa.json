@@ -1,0 +1,58 @@
+{
+  "id": "SgwXe_g2IV0q21MdLvEoa",
+  "brand": "Acer",
+  "model": "Liquid Z200",
+  "price": "90",
+  "imgUrl": "https://null-brown.vercel.app/api/images/SgwXe_g2IV0q21MdLvEoa.jpg",
+  "networkTechnology": "GSM / HSPA",
+  "networkSpeed": "HSPA",
+  "gprs": "Yes",
+  "edge": "Yes",
+  "announced": "2014  June",
+  "status": "Available. Released 2014  September",
+  "dimentions": "126 x 65 x 10.3 mm (4.96 x 2.56 x 0.41 in)",
+  "weight": "130",
+  "sim": [
+    "Single SIM (Mini-SIM) or Dual SIM (Mini-SIM/Micro-SIM",
+    "dual stand-by)"
+  ],
+  "displayType": "TFT capacitive touchscreen",
+  "displayResolution": "4.0 inches (~55.6% screen-to-body ratio)",
+  "displaySize": "480 x 800 pixels (~233 ppi pixel density)",
+  "os": "Android 4.4.2 (KitKat)",
+  "cpu": "Dual-core 1.0 GHz Cortex-A7",
+  "chipset": "Mediatek MT6572M",
+  "gpu": "Mali-400",
+  "externalMemory": "microSD  up to 32 GB (dedicated slot)",
+  "internalMemory": ["4 GB"],
+  "ram": "512 MB RAM",
+  "primaryCamera": "2 MP",
+  "secondaryCmera": "No",
+  "speaker": "Yes",
+  "audioJack": "Yes",
+  "wlan": ["Wi-Fi 802.11 b/g/n", "hotspot"],
+  "bluetooth": ["4.0", "A2DP"],
+  "gps": "Yes with A-GPS",
+  "nfc": "",
+  "radio": "FM radio",
+  "usb": "microUSB 2.0",
+  "sensors": "Accelerometer",
+  "battery": "Removable Li-Ion 1300 mAh battery",
+  "colors": [
+    "Titanium Black",
+    "Essential White",
+    "Fragrant Pink",
+    "Sky Blue",
+    "Sunshine Yellow"
+  ],
+  "options": {
+    "colors": [
+      { "code": 1000, "name": "Titanium Black" },
+      { "code": 1001, "name": "Essential White" },
+      { "code": 1002, "name": "Fragrant Pink" },
+      { "code": 1003, "name": "Sky Blue" },
+      { "code": 1004, "name": "Sunshine Yellow" }
+    ],
+    "storages": [{ "code": 2000, "name": "4 GB" }]
+  }
+}

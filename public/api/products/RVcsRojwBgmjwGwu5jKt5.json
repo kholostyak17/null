@@ -1,0 +1,49 @@
+{
+  "id": "RVcsRojwBgmjwGwu5jKt5",
+  "brand": "Acer",
+  "model": "Iconia Tab A101",
+  "price": "260",
+  "imgUrl": "https://null-brown.vercel.app/api/images/RVcsRojwBgmjwGwu5jKt5.jpg",
+  "networkTechnology": "GSM / HSPA",
+  "networkSpeed": "HSPA 21.1/5.76 Mbps",
+  "gprs": "Yes",
+  "edge": "Yes",
+  "announced": "2011  February. Released 2011  May",
+  "status": "Discontinued",
+  "dimentions": "195 x 117 x 13.1 mm (7.68 x 4.61 x 0.52 in)",
+  "weight": "470",
+  "sim": "Mini-SIM",
+  "displayType": "LCD capacitive touchscreen  16M colors",
+  "displayResolution": "7.0 inches (~60.4% screen-to-body ratio)",
+  "displaySize": "600 x 1024 pixels (~170 ppi pixel density)",
+  "os": "Android 3.2 (Honeycomb)",
+  "cpu": "Dual-core 1.0 GHz Cortex-A9",
+  "chipset": "Nvidia Tegra 2 T20",
+  "gpu": "ULP GeForce",
+  "externalMemory": "microSD  up to 32 GB (dedicated slot)",
+  "internalMemory": ["8 GB", "16 GB"],
+  "ram": "1 GB RAM",
+  "primaryCamera": ["5 MP", "autofocus", "LED flash"],
+  "secondaryCmera": "2 MP",
+  "speaker": "Yes with stereo speakers",
+  "audioJack": "Yes",
+  "wlan": ["Wi-Fi 802.11 b/g/n", "hotspot"],
+  "bluetooth": ["2.1", "A2DP", "EDR"],
+  "gps": "Yes with A-GPS",
+  "nfc": "",
+  "radio": "No",
+  "usb": "microUSB 2.0",
+  "sensors": ["Accelerometer", "gyro", "compass"],
+  "battery": "Non-removable Li-Po 1530 mAh battery",
+  "colors": ["Black/Red", "Black/Blue"],
+  "options": {
+    "colors": [
+      { "code": 1000, "name": "Black/Red" },
+      { "code": 1001, "name": "Black/Blue" }
+    ],
+    "storages": [
+      { "code": 2000, "name": "8 GB" },
+      { "code": 2001, "name": "16 GB" }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "8rj7Ld7jL_ZuxL_XiMTrI",
+  "brand": "Acer",
+  "model": "beTouch E400",
+  "price": "80",
+  "imgUrl": "https://null-brown.vercel.app/api/images/8rj7Ld7jL_ZuxL_XiMTrI.jpg",
+  "networkTechnology": "GSM / HSPA",
+  "networkSpeed": "HSPA 3.6/0.384 Mbps",
+  "gprs": "Class 10",
+  "edge": "Class 10",
+  "announced": "2010  February. Released 2010  April",
+  "status": "Discontinued",
+  "dimentions": "115 x 59.3 x 12 mm (4.53 x 2.33 x 0.47 in)",
+  "weight": "125",
+  "sim": "Mini-SIM",
+  "displayType": "TFT resistive touchscreen  256K colors",
+  "displayResolution": "3.2 inches (~44.7% screen-to-body ratio)",
+  "displaySize": "320 x 480 pixels (~180 ppi pixel density)",
+  "os": "Android 2.1 (Eclair)",
+  "cpu": "600 MHz ARM 11",
+  "chipset": "Qualcomm MSM7227 Snapdragon S1",
+  "gpu": "Adreno 200",
+  "externalMemory": "microSD (dedicated slot)",
+  "internalMemory": ["512 MB"],
+  "ram": "256 MB RAM",
+  "primaryCamera": ["3.15 MP", "autofocus"],
+  "secondaryCmera": "No",
+  "speaker": "Yes",
+  "audioJack": "Yes",
+  "wlan": "Wi-Fi 802.11 b/g",
+  "bluetooth": ["2.0", "A2DP"],
+  "gps": "Yes with A-GPS",
+  "nfc": "",
+  "radio": "Stereo FM radio",
+  "usb": "2.0",
+  "sensors": ["Accelerometer", "compass"],
+  "battery": "Removable Li-Po 1090 mAh battery",
+  "colors": [
+    "Soft-touch Black",
+    "Ceramic White and Pearl Red with 3 exchangeable battery covers"
+  ],
+  "options": {
+    "colors": [
+      { "code": 1000, "name": "Soft-touch Black" },
+      {
+        "code": 1001,
+        "name": "Ceramic White and Pearl Red with 3 exchangeable battery covers"
+      }
+    ],
+    "storages": [{ "code": 2000, "name": "512 MB" }]
+  }
+}
